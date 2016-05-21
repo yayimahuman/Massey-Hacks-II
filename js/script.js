@@ -19,13 +19,7 @@ $("#form-group-3 button").on("click",function(){
 
 function submit(){
     event.preventDefault();
-    console.log("hello");
-        origin = $("input#origin").val();
-        destination = $("input#destination").val();
-        $('#menu').remove();
-        console.log("origin is " + origin +  " and destination is " + destination);
-                //sidd's code
-        //var origin = new google.maps.LatLng(55.930385, -3.118425),
-        //var origin = "Toronto, ON",
-            //destination = "Pickering, ON",
+    origin = $("input#origin").val();
+    destination = $("input#destination").val();
+    $('#menu').remove();
 }
