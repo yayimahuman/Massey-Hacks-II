@@ -1,4 +1,4 @@
-var x = "Fatima";
+var x = "Muhammad";
 status = 0;
 $(document).ready(function(){
     $("#welcome").html("Welcome, " + x + "!");
@@ -39,10 +39,12 @@ function add(){
         $("#list").html("");
         $("#home").fadeIn();
         $("#new").fadeOut();
+        total += lastMeal;
+        $("#total").html(total + " grams");
+        $("#lastM").html(lastMeal + " grams");
         $("#add-img").attr("src", "css/img/plus.png");
 
-
-
+        lastMeal = 0;
         status = 0;
     }
     else{
@@ -56,7 +58,8 @@ function add(){
     }
 }
 counter = 0;
-
+total = 0;
+lastMeal = 0;
 function addToList(){
     //.hide().fadeIn();
     food = $("#food").val();
@@ -68,7 +71,8 @@ function addToList(){
     console.log(code);
     $("#list").append(code);
     $("#"+imageId).hide().fadeIn();
-    var y = checkFood();
+    lastMeal += checkFood();
+    console.log(lastMeal);
     counter++;
     status = 2;
 }
@@ -215,5 +219,5 @@ function checkFood(){
     	 	cal = 0
     }
     console.log(cal);
-    return cal;
+    return cal/5;
 }
