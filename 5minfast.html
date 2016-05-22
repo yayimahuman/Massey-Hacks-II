@@ -8,48 +8,105 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>5 Minute Fast/title>
+    <title>Clean Eats</title>
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!--Google Maps API-->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </head>
 
-<body id="page-top" data-spy="scroll">
-    <div id="menu">
-        <div class="col-sm-12">
-            <h1>5 Minute Fast</h1>
-            <p>Compare the costs of getting to your destination</p>
-            <br>
-            <form id="initial-form" class="form-horizontal" role="form" method="get" >
-                <div id="form-group-1" class="form-group">
-                    <div class="col-sm-6 col-sm-offset-3 input-group input-group-lg">
-                        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-location-arrow"></i></span>
-                        <input type="text" class="form-control" id="origin" placeholder="Enter your starting point, or leave this blank for current location" aria-describedby="basic-addon1">
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-                <div id="form-group-2" class="form-group">
-                    <div class="col-sm-6 col-sm-offset-3 input-group input-group-lg">
-                        <span class="input-group-addon" id="basic-addon2"><i class="fa fa-map-marker"></i></span>
-                        <input type="text" class="form-control" id="destination" placeholder="Enter your destination" aria-describedby="basic-addon2">
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-                <div id="form-group-3" class="form-group" style="text-align:center">
-                    <a href="google.ca" ><button type="submit" class="btn btn-default btn-lg">Search</button></a>
-                </div>
-            </form>
+<body>
+
+
+
+    <div id="home" class="container">
+        <h1 id="welcome"></h1>
+            <div class="col-sm-4">
+                <a onClick="profile()"><img class="img-responsive" src="css/img/profile.png" /></a>
+            </div>
+            <div class="col-sm-4">
+                <a onClick="meals()" href="#"><img class="img-responsive" src="css/img/food.png" /></a>
+            </div>
+            <div class="col-sm-4">
+                <a onClick="carbon()" href="#"><img class="img-responsive" src="css/img/factory.png" /></a>
+            </div>
+    </div>
+
+
+
+    <div id="profile">
+        <div class="col-sm-4 col-sm-offset-2"><img class="img-responsive" src="css/img/s.png" /></div>
+            <div class="col-sm-6">
+                <p id="name">Name</p>
+                <p id="meal">Last Meal</p>
+                <p id="detail">Detail</p>
         </div>
     </div>
+
+    <div id="meals">
+        <div class="col-sm-3" id="last">
+            <ul>
+                <li>Coffee</li>
+                <li>Cereal</li>
+            </ul>
+        </div>
+
+        <div class="col-sm-3" id="secondLast">
+            <ul>
+                <li>Steak</li>
+                <li>Fries</li>
+            </ul>
+        </div>
+
+        <div class="col-sm-3" id="thirdLast">
+            <ul>
+                <li>Salad</li>
+                <li>Juice</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div id="carbon">
+        <div class="col-sm-4 col-sm-offset-2"><img class="img-responsive" src="css/img/food.png" /></div>
+
+    </div>
+
+    <div id="new">
+        <div id="new-search">
+        <form  role = "form">
+            <div class = "col-sm-8 col-sm-offset-2">
+                <div class = "input-group">
+                   <input id="food" autocomplete="off" type = "text" class = "form-control" placeholder="Add a Food Item" style="height:50px">
+                   <span class = "input-group-btn">
+                      <button onClick="addToList()" class = "btn btn-default" type = "button" style="height:50px">
+                         Add to List <i class="fa fa-plus" style="margin-left:10px"></i>
+                      </button>
+                   </span>
+
+                </div><!-- /input-group -->
+
+            </div><!-- /.row -->
+        </form>
+        </div>
+
+        <div id="list" class="col-sm-8 col-sm-offset-2">
+
+        </div>
+
+    </div>
+
+
+    <div onclick="add()" id="add"><img id="add-img" class="img-responsive" src="css/img/plus.png" /></div>
+
 </body>
 </html>
